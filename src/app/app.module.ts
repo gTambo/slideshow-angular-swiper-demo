@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SlidesComponent } from './slides/slides.component';
 import { register } from 'swiper/element/bundle';
+import { SwiperDirective } from './swiper.directive';
+import { CommonModule } from '@angular/common';
 // register Swiper custom elements
 register();
 
@@ -16,7 +18,9 @@ register();
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule    
+    AppRoutingModule, 
+    SwiperDirective,
+    CommonModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA],
