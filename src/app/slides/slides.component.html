@@ -1,7 +1,10 @@
 <!-- slides.component.html -->
 
 <swiper-container fmSwiper [config]="config" init="false" class="my-swiper">
+    
     <swiper-slide *ngFor="let slide of slides$ | async; index as i">
+        <!-- <button class="swiper-btn-prev" >Prev</button> -->
         {{ slide }}
+        <!-- <button class="swiper-btn-next" >Next</button> -->
     </swiper-slide>
 </swiper-container>

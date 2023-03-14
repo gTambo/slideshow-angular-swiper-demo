@@ -2,14 +2,8 @@
 // slides.component.ts
 
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {CommonModule} from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
 import {A11y, Mousewheel, Navigation, Pagination, SwiperOptions} from 'swiper';
-import { SwiperDirective } from '../swiper.directive';
-
-// import SwiperCore, { Keyboard, Pagination, Navigation, Virtual } from 'swiper';
-
-// SwiperCore.use([Keyboard, Pagination, Navigation, Virtual]);
 
 @Component({
   selector: 'corp-slides',
@@ -25,18 +19,22 @@ export class SlidesComponent implements OnInit {
 
   ngOnInit(): void {
     this.slides$.next(
-      Array.from({ length: 600 }).map((el, index) => `Slide ${index + 1}`)
+      Array.from({ length: 100 }).map((el, index) => `Slide ${index + 1}`)
     );
   }
 
   public config: SwiperOptions = {
     modules: [Navigation, Pagination, A11y, Mousewheel],
     autoHeight: true,
-    spaceBetween: 100,
+    spaceBetween: 20,
     navigation: true,
-    pagination: {clickable: true, dynamicBullets: true},
-    slidesPerView: 1,
-    centeredSlides: false,
+    // {
+    //   nextEl: '.swiper-btn-next',
+    //   prevEl: '.swiper-btn-prev',
+    // },
+    pagination: {clickable: true, dynamicBullets: true, },
+    slidesPerView: 3,
+    centeredSlides: true,
     breakpoints: {
       400: {
         slidesPerView: "auto",
